@@ -1,0 +1,14 @@
+{
+  "functions": {
+    "api/index.php": {
+      "runtime": "now-php@0.0.9"
+    }
+  },
+  "routes": [
+    { "src": "/(.*)",  "dest": "/api/index.php" }
+  ],
+  "env": {
+    "APP_ENV": "dev",
+    "APP_SECRET": "6f71aad5435fe6e70b4481ffw8b1c3d2c2b6bec"
+  }
+}
