@@ -3,7 +3,7 @@
 .PHONY: now-php-framework-lumen now-php-framework-nette now-php-framework-phalcon now-php-framework-slim now-php-framework-symfony-microservice
 
 deploy:
-	cd ${PROJECT} && now -n now-examples-${PROJECT} -S juicyfx
+	cd ${PROJECT} && now -c -n now-examples-${PROJECT} -S juicyfx
 
 ##################
 # Basic examples #
