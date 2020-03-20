@@ -25,7 +25,7 @@
 
 | Example     | Description | Demo | Deploy |
 |-------------|-------------|------|--------|
-| [PHP](/php) | Static frontend with PHP function. | [👀🕶](https://now-examples-php.now.sh) | [▲▲▲](https://zeit.co/new/project?template=https://github.com/juicyfx/now-examples/tree/master/php) |
+| [PHP](/php) | Static frontend with PHP function. | [👀🕶](https://php.now.sh) | [▲▲▲](https://zeit.co/new/project?template=https://github.com/juicyfx/now-examples/tree/master/php) |
 | [PHP - Composer](/php-compose) | Install dependencies using Composer. | [👀🕶](https://now-examples-php-composer.now.sh) | [▲▲▲](https://zeit.co/new/project?template=https://github.com/juicyfx/now-examples/tree/master/php-composer) |
 | [PHP - Nette](/php-framework-nette) | Framework Nette. | [👀🕶](https://now-examples-php-framework-lumen.now.sh) | [▲▲▲](https://zeit.co/new/project?template=https://github.com/juicyfx/now-examples/tree/master/php-framework-lumen) |
 | [PHP - Phalcon](/php-framework-phalcon) | Framework Phalcon. | [👀🕶](https://now-examples-php-framework-phalcon.now.sh) | [▲▲▲](https://zeit.co/new/project?template=https://github.com/juicyfx/now-examples/tree/master/php-framework-phalcon) |
