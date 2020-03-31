@@ -1,5 +1,8 @@
+# PHP
 /vendor
-/.idea
-Homestead.json
-Homestead.yaml
+
+# ZEIT
+.now
+
+# ENV
 .env
