@@ -1,39 +1,48 @@
 .PHONY: deploy
-.PHONY: now-php now-php-composer
-.PHONY: now-php-framework-lumen now-php-framework-nette now-php-framework-phalcon now-php-framework-slim now-php-framework-symfony-microservice
-.PHONY: now-wordpress
+.PHONY: php php-composer
+.PHONY: php-lumen php-nette-tracy php-phalcon php-slim php-symfony-microservice php-wordpress
 
 deploy:
-	cd ${PROJECT} && now -c -n now-examples-${PROJECT} -S juicyfx ${NOW}
+	cd ${PROJECT} && now -c -n ${PROJECT} -S xorg ${NOW}
+
+deploy-all:
+	$(MAKE) php
+	$(MAKE) php-composer
+	$(MAKE) php-lumen
+	$(MAKE) php-nette-tracy
+	$(MAKE) php-phalcon
+	$(MAKE) php-slim
+	$(MAKE) php-symfony-microservice
+	$(MAKE) php-wordpress
 
 ##################
 # Basic examples #
 ##################
 
-now-php:
+php:
 	PROJECT=php $(MAKE) deploy
 
-now-php-composer:
+php-composer:
 	PROJECT=php-composer $(MAKE) deploy
 
 ##################
 # Basic examples #
 ##################
 
-now-php-framework-lumen:
-	PROJECT=php-framework-lumen $(MAKE) deploy
+php-lumen:
+	PROJECT=php-lumen $(MAKE) deploy
 
-now-php-framework-nette:
-	PROJECT=php-framework-nette $(MAKE) deploy
+php-nette-tracy:
+	PROJECT=php-nette-tracy $(MAKE) deploy
 
-now-php-framework-phalcon:
-	PROJECT=php-framework-phalcon $(MAKE) deploy
+php-phalcon:
+	PROJECT=php-phalcon $(MAKE) deploy
 
-now-php-framework-slim:
-	PROJECT=php-framework-slim $(MAKE) deploy
+php-slim:
+	PROJECT=php-slim $(MAKE) deploy
 
-now-php-framework-symfony-microservice:
-	PROJECT=php-framework-symfony-microservice $(MAKE) deploy
+php-symfony-microservice:
+	PROJECT=php-symfony-microservice $(MAKE) deploy
 
-now-php-wordpress:
+php-wordpress:
 	PROJECT=php-wordpress $(MAKE) deploy
