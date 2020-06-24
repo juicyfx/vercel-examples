@@ -8,5 +8,5 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
-# ZEIT
-.now
+# Vercel
+.vercel

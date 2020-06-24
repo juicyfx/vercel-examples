@@ -79,7 +79,7 @@ $table_prefix = 'wp_';
  */
 define( 'WP_DEBUG', true );
 
-// ZEIT Now
+// Vercel
 define( 'WP_TEMP_DIR', '/tmp' );
 
 /* That's all, stop editing! Happy publishing. */
