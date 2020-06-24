@@ -1,7 +1,7 @@
-<h1 align=center>Juicy(fx) ZEIT Examples</h1>
+<h1 align=center>Examples & Sample Projects for <a href="https://vercel.com">Vercel</a></h1>
 
 <p align=center>
-   📦 Examples of Juicy(fx) runtimes for ZEIT Now.
+   📦 Included examples of PHP Runtime (<a href="https://github.com/juicyfx/vercel-php">vercel-php</a>).
 </p>
 
 <p align=center>
@@ -12,27 +12,27 @@
 
 ## ⚙️ Usage
 
-1. Clone repository `git clone git@github.com:juicyfx/now-examples.git`.
+1. Clone repository `git clone git@github.com:juicyfx/vercel-examples.git`.
 2. Browse single example, `cd /php`.
-3. Deploy to ZEIT Now, `now`.
+3. Deploy to Vercel, `vercel`.
 
-**Click & Go**
+## 🚀 Click & Go
 
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/juicyfx/now-examples/tree/master/php)
+Fastest way how to deploy example project is using following deploy button. It deploys you example PHP project.
 
+<a href="https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php"><img src="https://vercel.com/button" height="24"></a>
 
 ## 📦 Examples
 
 | Example     | Description | Demo | Deploy |
 |-------------|-------------|------|--------|
-| [PHP](/php) | Static frontend with PHP function. | [👀🕶](https://php.now.sh) | [▲▲▲](https://zeit.co/new/project?template=https://github.com/juicyfx/now-examples/tree/master/php) |
-| [PHP - Composer](/php-compose) | Install dependencies using Composer. | [👀🕶](https://now-examples-php-composer.now.sh) | [▲▲▲](https://zeit.co/new/project?template=https://github.com/juicyfx/now-examples/tree/master/php-composer) |
-| [PHP - Nette](/php-framework-nette) | Framework Nette. | [👀🕶](https://now-examples-php-framework-lumen.now.sh) | [▲▲▲](https://zeit.co/new/project?template=https://github.com/juicyfx/now-examples/tree/master/php-framework-lumen) |
-| [PHP - Phalcon](/php-framework-phalcon) | Framework Phalcon. | [👀🕶](https://now-examples-php-framework-phalcon.now.sh) | [▲▲▲](https://zeit.co/new/project?template=https://github.com/juicyfx/now-examples/tree/master/php-framework-phalcon) |
-| [PHP - Slim](/php-framework-slim) | Framework Slim. | [👀🕶](https://now-examples-php-framework-slim.now.sh) | [▲▲▲](https://zeit.co/new/project?template=https://github.com/juicyfx/now-examples/tree/master/php-framework-slim) |
-| [PHP - Symfony (microservice)](/php-framework-symfony-microservice) | Framework Symfony (microservice). | [👀🕶](https://now-examples-php-framework-symfony-microservice.now.sh) | [▲▲▲](https://zeit.co/new/project?template=https://github.com/juicyfx/now-examples/tree/master/php-framework-symfony-microservice) |
-| [PHP - Lumen](/php-framework-lumen) | Framework Lumen. | [👀🕶](https://now-examples-php-framework-lumen.now.sh) | [▲▲▲](https://zeit.co/new/project?template=https://github.com/juicyfx/now-examples/tree/master/php-framework-lumen) |
-
+| [PHP](/php) | Static frontend with PHP function. | [👀🕶](https://php.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php) |
+| [PHP - Composer](/php-compose) | Install dependencies using Composer | [👀🕶](https://php-composer-demo.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-composer) |
+| [PHP - Lumen](/php-lumen) | Lumen - PHP Micro-Framework By Laravel | [👀🕶](https://php-lumen.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-lumen) |
+| [PHP - Nette Tracy](/php-nette-tracy) | Tracy Debugging Tools by Nette. | [👀🕶](https://php-nette-tracy.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-nette-tracy) |
+| [PHP - Phalcon](/php-phalcon) | Phalcon Framework: High Performance PHP Framework | [👀🕶](https://php-phalcon.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-phalcon) |
+| [PHP - Slim](/php-slim) | Slim Framework | [👀🕶](https://php-slim.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-slim) |
+| [PHP - Symfony (microservice)](/php-symfony-microservice) | Symfony, High Performance PHP Framework for Web Development | [👀🕶](https://php-symfony-microservice.vercel.app/) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-symfony-microservice) |
 
 ## 📝 License
 
