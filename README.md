@@ -28,6 +28,7 @@ Fastest way how to deploy example project is using following deploy button. It d
 |-------------|-------------|------|--------|
 | [PHP](/php) | Static frontend with PHP function. | [👀🕶](https://php.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php) |
 | [PHP - Composer](/php-compose) | Install dependencies using Composer | [👀🕶](https://php-composer-demo.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-composer) |
+| [PHP - Laravel](/php-laravel) | Laravel - The PHP Framework For Web Artisans | [👀🕶](https://php-laravel.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-laravel) |
 | [PHP - Lumen](/php-lumen) | Lumen - PHP Micro-Framework By Laravel | [👀🕶](https://php-lumen.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-lumen) |
 | [PHP - Nette Tracy](/php-nette-tracy) | Tracy Debugging Tools by Nette. | [👀🕶](https://php-nette-tracy.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-nette-tracy) |
 | [PHP - Phalcon](/php-phalcon) | Phalcon Framework: High Performance PHP Framework | [👀🕶](https://php-phalcon.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-phalcon) |
