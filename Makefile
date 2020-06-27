@@ -1,6 +1,6 @@
 .PHONY: deploy
 .PHONY: php php-composer
-.PHONY: php-laravel php-lumen php-nette-tracy php-phalcon php-slim php-symfony-microservice php-wordpress
+.PHONY: php-laravel php-lumen php-nette-tracy php-phalcon php-satis php-slim php-symfony-microservice php-wordpress
 
 deploy:
 	cd ${PROJECT} && now -c -n ${PROJECT} -S xorg ${NOW}
@@ -11,6 +11,7 @@ deploy-all:
 	$(MAKE) php-laravel
 	$(MAKE) php-lumen
 	$(MAKE) php-nette-tracy
+	$(MAKE) php-satis
 	$(MAKE) php-phalcon
 	$(MAKE) php-slim
 	$(MAKE) php-symfony-microservice
@@ -38,6 +39,9 @@ php-nette-tracy:
 
 php-phalcon:
 	PROJECT=php-phalcon $(MAKE) deploy
+
+php-satis:
+	PROJECT=php-satis $(MAKE) deploy
 
 php-slim:
 	PROJECT=php-slim $(MAKE) deploy
