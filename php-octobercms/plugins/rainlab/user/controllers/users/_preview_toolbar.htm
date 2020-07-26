@@ -1,0 +1,51 @@
+<a
+    href="<?= Backend::url('rainlab/user/users') ?>"
+    class="btn btn-default oc-icon-chevron-left">
+    <?= e(trans('rainlab.user::lang.groups.return_to_users')) ?>
+</a>
+<a
+    href="<?= Backend::url('rainlab/user/users/update/'.$formModel->id) ?>"
+    class="btn btn-primary oc-icon-pencil">
+    <?= e(trans('rainlab.user::lang.users.update_details')) ?>
+</a>
+<?php if ($this->user->hasAccess('rainlab.users.impersonate_user')): ?>
+    <a
+        href="javascript:;"
+        data-request="onImpersonateUser"
+        data-request-confirm="<?= e(trans('rainlab.user::lang.users.impersonate_confirm')) ?>"
+        class="btn btn-default oc-icon-user-secret">
+        <?= e(trans('rainlab.user::lang.users.impersonate_user')) ?>
+    </a>
+<?php endif ?>
+
+<?php if ($formModel->isSuspended()): ?>
+    <a
+        href="javascript:;"
+        data-request="onUnsuspendUser"
+        data-request-confirm="<?= e(trans('rainlab.user::lang.users.unsuspend_confirm')) ?>"
+        class="btn btn-default oc-icon-unlock-alt">
+        <?= e(trans('rainlab.user::lang.users.unsuspend')) ?>
+    </a>
+<?php endif ?>
+
+<?php
+/* @todo
+<div class="btn-group">
+    <a
+        href="<?= Backend::url('rainlab/user/users/update/'.$formModel->id) ?>"
+        class="btn btn-default oc-icon-pencil">
+        Deactivate
+    </a>
+    <a
+        href="<?= Backend::url('rainlab/user/users/update/'.$formModel->id) ?>"
+        class="btn btn-default oc-icon-pencil">
+        Ban user
+    </a>
+    <a
+        href="<?= Backend::url('rainlab/user/users/update/'.$formModel->id) ?>"
+        class="btn btn-default oc-icon-pencil">
+        Delete
+    </a>
+</div>
+*/
+?>

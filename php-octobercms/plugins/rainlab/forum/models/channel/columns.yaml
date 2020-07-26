@@ -1,0 +1,12 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    title:
+        label: rainlab.forum::lang.data.title
+        searchable: true
+
+    description:
+        label: rainlab.forum::lang.data.desc
+        searchable: true

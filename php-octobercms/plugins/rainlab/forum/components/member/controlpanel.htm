@@ -1,0 +1,58 @@
+<div class="panel">
+    <div class="list-group">
+
+        {% if otherMember.is_moderator %}
+            <a
+                href="javascript:;"
+                class="list-group-item"
+                data-request="onApprove"
+                data-request-update="'@controlpanel': '#memberControlPanel'">
+                {% if not member.is_approved %}
+                    Approve member
+                {% else %}
+                    Unapprove member
+                {% endif %}
+            </a>
+            <a
+                href="javascript:;"
+                class="list-group-item"
+                data-request="onBan"
+                data-request-update="'@controlpanel': '#memberControlPanel'">
+                {% if member.is_banned %}
+                    Unban member
+                {% else %}
+                    Ban member
+                {% endif %}
+            </a>
+            <a
+                href="javascript:;"
+                class="list-group-item"
+                data-request="onPurgePosts"
+                data-request-confirm="Are you sure? This will delete all posts by this member.">
+                Purge posts
+            </a>
+        {% else %}
+            <a
+                href="javascript:;"
+                class="list-group-item"
+                data-request="onReport"
+                data-request-update="'@controlpanel': '#memberControlPanel'"
+                data-request-confirm="Are you sure you want to flag this member as a spammer?">
+                Report spammer
+            </a>
+        {% endif %}
+
+        {% if canEdit %}
+            <a
+                href="{{ this.page.baseFileName|page }}?mode=edit"
+                class="list-group-item">
+                Edit details
+            </a>
+        {% endif %}
+
+        <div class="list-group-item">
+            <i class="fa fa-eye icon-comments"></i> {{ member.count_posts }} posts
+        </div>
+
+    </div>
+</div>

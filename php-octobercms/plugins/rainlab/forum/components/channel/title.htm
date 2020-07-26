@@ -1,0 +1,20 @@
+<div class="row">
+
+    <div class="col-md-9">
+        {{ form_open({ method: 'get' })}}
+            <div class="search-box">
+                <input type="text" name="search" class="form-control" placeholder="Search topics" value="{{ input('search')|e }}">
+            </div>
+        {{ form_close() }}
+    </div>
+    <div class="col-md-3 text-right">
+        {% if isGuest %}
+            <p>Log in to Post a new topic</p>
+        {% else %}
+            <a href="{{ topicPage|page }}?channel={{ channel.id }}" class="btn btn-primary btn-block">
+                Post a new topic
+            </a>
+        {% endif %}
+    </div>
+
+</div>

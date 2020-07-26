@@ -1,0 +1,75 @@
+1.0.1:
+    - Initialize plugin.
+    - create_users_table.php
+    - create_throttle_table.php
+1.0.2: Seed tables.
+1.0.3: Translated hard-coded text to language strings.
+1.0.4: Improvements to user-interface for Location manager.
+1.0.5: Added contact details for users.
+1.0.6:
+    - Added Mail Blocker utility so users can block specific mail templates.
+    - create_mail_blockers_table.php
+1.0.7: Add back-end Settings page.
+1.0.8: Updated the Settings page.
+1.0.9: Adds new welcome mail message for users and administrators.
+1.0.10: Adds administrator-only activation mode.
+1.0.11:
+    - Users now have an optional login field that defaults to the email field.
+    - users_add_login_column.php
+1.0.12:
+    - Create a dedicated setting for choosing the login mode.
+    - users_rename_login_to_username.php
+1.0.13: Minor fix to the Account sign in logic.
+1.0.14: Minor improvements to the code.
+1.0.15:
+    - Adds last name column to users table (surname).
+    - users_add_surname.php
+1.0.16: Require permissions for settings page too.
+1.1.0: !!! Profile fields and Locations have been removed.
+1.1.1:
+    - Users can now be added to groups.
+    - create_user_groups_table.php
+    - seed_user_groups_table.php
+1.1.2: A raw URL can now be passed as the redirect property in the Account component.
+1.1.3: Adds a super user flag to the users table, reserved for future use.
+1.1.4: User list can be filtered by the group they belong to.
+1.1.5: Adds a new permission to hide the User settings menu item.
+1.2.0:
+    - Users can now deactivate their own accounts.
+    - users_add_deleted_at.php
+1.2.1: New feature for checking if a user is recently active/online.
+1.2.2: Add bulk action button to user list.
+1.2.3: Included some descriptive paragraphs in the Reset Password component markup.
+1.2.4: Added a checkbox for blocking all mail sent to the user.
+1.2.5:
+    - Database maintenance. Updated all timestamp columns to be nullable.
+    - update_timestamp_nullable.php
+1.2.6:
+    - Add a dedicated last seen column for users.
+    - users_add_last_seen.php
+1.2.7: Minor fix to user timestamp attributes.
+1.2.8: Add date range filter to users list. Introduced a logout event.
+1.2.9: Add invitation mail for new accounts created in the back-end.
+1.3.0:
+    - Introduced guest user accounts.
+    - users_add_guest_flag.php
+    - users_add_superuser_flag.php
+1.3.1: User notification variables can now be extended.
+1.3.2: Minor fix to the Auth::register method.
+1.3.3: Allow prevention of concurrent user sessions via the user settings.
+1.3.4: Added force secure protocol property to the account component.
+1.4.0: !!! The Notifications tab in User settings has been removed.
+1.4.1: Added support for user impersonation.
+1.4.2: Fixes security bug in Password Reset component.
+1.4.3: Fixes session handling for AJAX requests.
+1.4.4: Fixes bug where impersonation touches the last seen timestamp.
+1.4.5: Added token fallback process to Account / Reset Password components when parameter is missing.
+1.4.6: Fixes Auth::register method signature mismatch with core OctoberCMS Auth library
+1.4.7: Fixes redirect bug in Account component / Update translations and separate user and group management.
+1.4.8: Fixes a bug where calling MailBlocker::removeBlock could remove all mail blocks for the user.
+1.5.0: !!! Required password length is now a minimum of 8 characters. Previous passwords will not be affected until the next password change.
+1.5.1:
+    - User IP addresses are now logged. Introduce registration throttle.
+    - users_add_ip_address.php
+1.5.2: Whitespace from usernames is now trimmed, allowed for username to be added to Reset Password mail templates.
+1.5.3: Fixes a bug in the user update functionality if password is not changed. Added highlighting for banned users in user list.

@@ -1,0 +1,13 @@
+subject = "An account has been created for you"
+description = "Invite a new user to the website"
+==
+Hello {{ name }}
+
+A user account has been created for you. Please use the following login and password to sign in:
+
+{% partial 'panel' body %}
+- Login: `{{ login }}`
+- Password: `{{ password|raw }}`
+{% endpartial %}
+
+After signing in you should change your password as soon as possible.

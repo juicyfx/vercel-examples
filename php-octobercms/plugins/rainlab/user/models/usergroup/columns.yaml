@@ -1,0 +1,26 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id:
+        label: rainlab.user::lang.group.id
+        invisible: true
+
+    name:
+        label: rainlab.user::lang.group.name
+        searchable: true
+
+    code:
+        label: rainlab.user::lang.group.code
+
+    created_at:
+        label: rainlab.user::lang.group.created_at
+
+    users_count:
+        label: rainlab.user::lang.group.users_count
+        relation: users_count
+        valueFrom: count
+        default: 0
+        sortable: false

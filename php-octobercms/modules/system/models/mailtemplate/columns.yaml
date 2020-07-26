@@ -1,0 +1,23 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    code:
+        label: system::lang.mail_templates.code
+        searchable: true
+
+    subject:
+        label: system::lang.mail_templates.subject
+        searchable: true
+
+    description:
+        label: system::lang.mail_templates.description
+        searchable: true
+
+    layout:
+        label: system::lang.mail_templates.layout
+        relation: layout
+        select: name
+        sortable: false

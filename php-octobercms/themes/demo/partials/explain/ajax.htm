@@ -1,0 +1,65 @@
+<hr />
+
+<!-- This file is an explanation of the AJAX page -->
+
+<p class="lead">
+    <i class="icon-copy"></i> &nbsp; The HTML markup for this example:
+</p>
+
+<pre>{% filter escape %}<!-- The form -->
+<form role="form" data-request="onTest" data-request-update="calcresult: '#result'">
+    <input type="text" value="15" name="value1">
+    <select name="operation">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+    </select>
+    <input type="text" value="5" name="value2">
+    <button type="submit">Calculate</button>
+</form>
+
+<!-- The result -->
+<div id="result">{{ "{% partial \"calcresult\" %}" }}</div>
+{% endfilter %}</pre>
+
+<hr />
+
+<p class="lead">
+    <i class="icon-tags"></i> &nbsp; The <code>calcresult</code> partial:
+</p>
+
+<pre>{% filter escape %}
+{{ "{% if result %}" }}
+    The result is {{ "{{ result }}" }}.
+{{ "{% else %}" }}
+    Click the <em>Calculate</em> button to find the answer.
+{{ "{% endif %}" }}{% endfilter %}</pre>
+
+<hr />
+
+<p class="lead">
+    <i class="icon-code"></i> &nbsp; The <code>onTest</code> PHP code:
+</p>
+
+<pre>function onTest()
+{
+    $value1 = input('value1');
+    $value2 = input('value2');
+    $operation = input('operation');
+
+    switch ($operation) {
+        case '+' : 
+            $this['result'] = $value1 + $value2;
+            break;
+        case '-' : 
+            $this['result'] = $value1 - $value2;
+            break;
+        case '*' : 
+            $this['result'] = $value1 * $value2;
+            break;
+        default : 
+            $this['result'] = $value1 / $value2;
+            break;
+    }
+}</pre>

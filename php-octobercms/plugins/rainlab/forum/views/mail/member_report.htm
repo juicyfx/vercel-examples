@@ -1,0 +1,48 @@
+subject = "Spammer reported '{{ member.username }}'"
+==
+Dear Moderator,
+
+{{ otherMember.username }} has just reported a forum member to be a spammer. Please verify that this is true and consider banning the offending user.
+
+The offender is:
+{{ member.username }}
+
+You can view their profile at:
+{{ memberUrl }}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Incident reported by
+
+Name: {{ otherMember.user.name }}
+Email: {{ otherMember.user.email }}
+Forum Username: {{ otherMember.username }}
+Forum Profile: {{ otherMemberUrl  }}
+
+This message has been sent to all forum moderators. Please do not forward.
+
+==
+
+<p>Dear Moderator,</p>
+
+<p>{{ otherMember.username }} has just reported a forum member to be a spammer. Please verify that this is true and consider banning the offending user.</p>
+
+<p>
+    The offender is:<br />
+    <strong>{{ member.username }}</strong>
+</p>
+
+<p>
+    You can view their profile at:<br />
+    <a href="{{ memberUrl }}">{{ memberUrl }}</a>
+</p>
+
+<p><strong>Incident reported by</strong></p>
+
+<ul>
+    <li>Name: {{ otherMember.user.name }}</li>
+    <li>Email: {{ otherMember.user.email }}</li>
+    <li>Forum Username: {{ otherMember.username }}</li>
+    <li>Forum Profile: {{ otherMemberUrl  }}</li>
+</ul>
+
+<p>This message has been sent to all forum moderators. Please do not forward.</p>

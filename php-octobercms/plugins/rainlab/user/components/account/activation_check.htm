@@ -1,0 +1,9 @@
+{% if not user.is_activated %}
+
+    <h3>Your email address has not yet been verified.</h3>
+    <p>
+        You should verify your account otherwise it may be deleted. Please check your email to verify.
+        <a href="javascript:;" data-request="onSendActivationEmail">Send the verification email again</a>.
+    </p>
+
+{% endif %}

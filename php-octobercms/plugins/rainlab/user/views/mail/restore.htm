@@ -1,0 +1,22 @@
+subject = "Requested Password Reset"
+description = "User requests a password reset"
+==
+Hello {{ name }}
+
+Somebody has requested a password reset for your account, if this was not you, please ignore this email.
+
+Use this activation code to restore your password:
+
+{% partial 'promotion' body %}
+{{ code }}
+{% endpartial %}
+
+You can use the following link:
+
+{% partial 'button' url=link type='positive' body %}
+Restore password
+{% endpartial %}
+
+{% partial 'subcopy' body %}
+    **This is an automatic message. Please do not reply to it.**
+{% endpartial %}

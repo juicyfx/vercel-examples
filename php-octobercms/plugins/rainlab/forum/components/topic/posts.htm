@@ -1,0 +1,12 @@
+<div class="forum-posts">
+    {% for post in posts %}
+        {% set isGuarded = topic.channel.is_guarded and not post.member.is_approved %}
+        {% if not member and isGuarded %}
+            {# Post has been hidden #}
+        {% else %}
+            <div class="forum-post {{ isGuarded ? 'is-guarded' }}" data-post-id="{{ post.id }}" id="post-{{ post.id }}">
+                {% partial __SELF__ ~ "::post" post=post %}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>

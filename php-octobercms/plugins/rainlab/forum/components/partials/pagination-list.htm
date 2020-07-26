@@ -1,0 +1,88 @@
+{% set paginationEnabled =
+    records.currentPage > 1 or
+    records.lastPage > 1 or
+    records.lastPage > records.currentPage
+%}
+
+{% if paginationEnabled %}
+    {# How many pages to display around the current page #}
+    {% set n = 2 %}
+
+    {% set currentPageZeroBased = records.currentPage-1 %}
+
+    {% set pageLinks = [] %}
+    {% set pageSet = [] %}
+
+    {% set startOffset = max(currentPageZeroBased - n, 0) %}
+    {% if (startOffset + 2*n+1) > (records.lastPage-1) %}
+        {% set startOffset = max(records.lastPage - 2*n - 1, 0) %}
+    {% endif %}
+
+    {% for page in 1..records.lastPage %}
+        {% set pageLinks = pageLinks|merge([page]) %}
+    {% endfor %}
+
+    {% set activeBlock = pageLinks|slice(startOffset, 2*n + 1) %}
+
+    {% if startOffset > 0 %}
+        {% set pageSet = pageSet|merge([1]) %}
+
+        {% if startOffset > 1 %}
+            {% set pageSet = pageSet|merge(['...']) %}
+        {% endif %}
+    {% endif %}
+
+    {% set pageSet = pageSet|merge(activeBlock) %}
+
+    {% set diffToEnd = (records.lastPage-1) - (startOffset + 2*n+1) + 1 %}
+
+    {% if diffToEnd > 0 %}
+        {% if diffToEnd > 1 %}
+            {% set pageSet = pageSet|merge(['...']) %}
+        {% endif %}
+
+        {% set pageSet = pageSet|merge([records.lastPage]) %}
+    {% endif %}
+
+    <ul class="pagination">
+        {% if records.currentPage > 1 %}
+            <li>
+                <a href="{{ paginationUrl ~ (records.currentPage - 1) }}">
+                    &larr; Previous
+                </a>
+            </li>
+        {% else %}
+            <li class="disabled">
+                <span>
+                    &larr; Previous
+                </span>
+            </li>
+        {% endif %}
+
+        {% for page in pageSet %}
+            {% if page == '...' %}
+                <li class="interval">
+                    {{ page }}
+                </li>
+            {% else %}
+                <li class="{{ page == records.currentPage ? 'active' }}">
+                    <a href="{{ paginationUrl ~ page }}">{{ page }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li>
+                <a href="{{ paginationUrl ~ (records.currentPage + 1) }}">
+                    Next &rarr;
+                </a>
+            </li>
+        {% else %}
+            <li class="disabled">
+                <span>
+                    Next &rarr;
+                </span>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}

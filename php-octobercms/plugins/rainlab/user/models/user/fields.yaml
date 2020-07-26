@@ -1,0 +1,95 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: rainlab.user::lang.user.name
+        span: auto
+
+    surname:
+        label: rainlab.user::lang.user.surname
+        span: auto
+
+tabs:
+    fields:
+
+        email:
+            label: rainlab.user::lang.user.email
+            tab: rainlab.user::lang.user.account
+            span: full
+
+        send_invite:
+            type: checkbox
+            label: rainlab.user::lang.user.send_invite
+            comment: rainlab.user::lang.user.send_invite_comment
+            tab: rainlab.user::lang.user.account
+            default: true
+            context: create
+
+        block_mail:
+            label: rainlab.user::lang.user.block_mail
+            tab: rainlab.user::lang.user.account
+            type: checkbox
+            span: full
+            cssClass: field-align-above
+            context: update
+
+        password@create:
+            label: rainlab.user::lang.user.create_password
+            comment: rainlab.user::lang.user.create_password_comment
+            tab: rainlab.user::lang.user.account
+            type: password
+            span: left
+
+        password@update:
+            label: rainlab.user::lang.user.reset_password
+            comment: rainlab.user::lang.user.reset_password_comment
+            tab: rainlab.user::lang.user.account
+            type: password
+            span: left
+
+        password_confirmation:
+            label: rainlab.user::lang.user.confirm_password
+            comment: rainlab.user::lang.user.confirm_password_comment
+            tab: rainlab.user::lang.user.account
+            type: password
+            span: right
+            context: [create, update]
+
+        username:
+            label: rainlab.user::lang.user.username
+            tab: rainlab.user::lang.user.account
+            hidden: true
+            span: left
+
+        groups:
+            label: rainlab.user::lang.user.groups
+            tab: rainlab.user::lang.user.account
+            type: relation
+            emptyOption: rainlab.user::lang.user.empty_groups
+
+        created_ip_address:
+            label: rainlab.user::lang.user.created_ip_address
+            span: auto
+            disabled: true
+            tab: rainlab.user::lang.user.account
+            context: preview
+
+        last_ip_address:
+            label: rainlab.user::lang.user.last_ip_address
+            span: auto
+            disabled: true
+            tab: rainlab.user::lang.user.account
+            context: preview
+
+secondaryTabs:
+    fields:
+
+        avatar:
+            label: rainlab.user::lang.user.avatar
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260

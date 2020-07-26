@@ -1,0 +1,33 @@
+{{ form_ajax('onUpdate') }}
+
+    <div class="form-group">
+        <label for="accountName">Full Name</label>
+        <input name="name" type="text" class="form-control" id="accountName" value="{{ user.name }}">
+    </div>
+
+    <div class="form-group">
+        <label for="accountEmail">Email</label>
+        <input name="email" type="email" class="form-control" id="accountEmail" value="{{ user.email }}">
+    </div>
+
+    <div class="form-group">
+        <label for="accountPassword">New Password</label>
+        <input name="password" type="password" class="form-control" id="accountPassword">
+    </div>
+
+    <div class="form-group">
+        <label for="accountPasswordConfirm">Confirm New Password</label>
+        <input name="password_confirmation" type="password" class="form-control" id="accountPasswordConfirm">
+    </div>
+
+    {% if updateRequiresPassword %}
+        <p>To change these details, please confirm your current password.</p>
+        <div class="form-group">
+            <label for="accountPasswordCurrent">Current Password <small class="text-danger">* required</small></label>
+            <input name="password_current" type="password" class="form-control" id="accountPasswordCurrent">
+        </div>
+    {% endif %}
+
+    <button type="submit" class="btn btn-default">Save</button>
+
+{{ form_close() }}

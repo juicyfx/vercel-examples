@@ -1,0 +1,25 @@
+{{ form_open({ request: 'onUpdate', model: member }) }}
+
+    <div class="form-group">
+        <label for="memberUsername">Username</label>
+        <input name="username" type="text" class="form-control" id="memberUsername" value="{{ form_value('username') }}">
+    </div>
+
+    <div class="form-group">
+        <div class="checkbox">
+            <label for="mailPreferences-topicReply">
+                <input name="MailPreferences[topic_reply]" type="hidden" value="0" />
+                <input
+                    id="mailPreferences-topicReply"
+                    name="MailPreferences[topic_reply]"
+                    {{ mailPreferences.topic_reply ? 'checked' }}
+                    type="checkbox"
+                    value="1" />
+                Notify me about replies to topics I am watching
+            </label>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-default">Save</button>
+
+{{ form_close() }}

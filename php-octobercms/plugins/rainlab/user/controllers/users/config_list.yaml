@@ -1,0 +1,40 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# List Title
+title: rainlab.user::lang.users.list_title
+
+# Model List Column configuration
+list: $/rainlab/user/models/user/columns.yaml
+
+# Model Class name
+modelClass: RainLab\User\Models\User
+
+# Link URL for each record
+recordUrl: rainlab/user/users/preview/:id
+
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
+
+# Records to display per page
+recordsPerPage: 20
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+# Displays the list column set up button
+showSetup: true
+
+# Filter widget configuration
+filter: config_filter.yaml
+
+# Toolbar widget configuration
+toolbar:
+
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt
