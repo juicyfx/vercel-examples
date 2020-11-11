@@ -2,10 +2,14 @@
     "version": 2,
     "functions": {
         "api/index.php": {
-            "runtime": "vercel-php@0.2.0"
+            "runtime": "vercel-php@0.3.1"
         }
     },
     "routes": [
+        { 
+            "src": "/(css|js)/(.*)$", 
+            "dest": "/api/assets.php?type=$1&file=$2"
+        },
         {
             "src": "/(.*)\\.(.+)/$",
             "dest": "public/$1.$2"
