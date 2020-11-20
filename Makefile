@@ -1,21 +1,22 @@
 .PHONY: deploy
 .PHONY: php php-composer
-.PHONY: php-laravel php-lumen php-nette-tracy php-phalcon php-satis php-slim php-symfony-microservice php-wordpress
+.PHONY: php-laravel php-lumen php-nette-tracy php-phalcon php-satis php-slim php-symfony-microservice
 
 deploy:
-	cd ${PROJECT} && now -c -n ${PROJECT} -S xorg ${NOW}
+	cd ${PROJECT} && vc -c -n ${PROJECT} -S xorg ${NOW}
 
 deploy-all:
+	$(MAKE) cache
 	$(MAKE) php
 	$(MAKE) php-composer
 	$(MAKE) php-laravel
 	$(MAKE) php-lumen
 	$(MAKE) php-nette-tracy
-	$(MAKE) php-satis
 	$(MAKE) php-phalcon
+	$(MAKE) php-satis
 	$(MAKE) php-slim
+	$(MAKE) php-sqlite
 	$(MAKE) php-symfony-microservice
-	$(MAKE) php-wordpress
 
 ##################
 # Basic examples #
@@ -30,6 +31,9 @@ php-composer:
 ##################
 # Basic examples #
 ##################
+
+php-laravel:
+	PROJECT=php-laravel $(MAKE) deploy
 
 php-lumen:
 	PROJECT=php-lumen $(MAKE) deploy
@@ -46,11 +50,8 @@ php-satis:
 php-slim:
 	PROJECT=php-slim $(MAKE) deploy
 
+php-sqlite:
+	PROJECT=php-sqlite $(MAKE) deploy
+
 php-symfony-microservice:
 	PROJECT=php-symfony-microservice $(MAKE) deploy
-
-php-wordpress:
-	PROJECT=php-wordpress $(MAKE) deploy
-
-php-laravel:
-	PROJECT=php-laravel $(MAKE) deploy

@@ -32,8 +32,17 @@ Fastest way how to deploy example project is using following deploy button. It d
 | [PHP - Lumen](/php-lumen) | Lumen - PHP Micro-Framework By Laravel | [👀🕶](https://php-lumen.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-lumen) |
 | [PHP - Nette Tracy](/php-nette-tracy) | Tracy Debugging Tools by Nette. | [👀🕶](https://php-nette-tracy.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-nette-tracy) |
 | [PHP - Phalcon](/php-phalcon) | Phalcon Framework: High Performance PHP Framework | [👀🕶](https://php-phalcon.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-phalcon) |
+| [PHP - Satis](/php-satis) | Composer Satis | [👀🕶](https://php-satis.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-satis) |
 | [PHP - Slim](/php-slim) | Slim Framework | [👀🕶](https://php-slim.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-slim) |
+| [PHP - Sqlite](/php-sqlite) | PHP + SQlite | [👀🕶](https://php-sqlite.vercel.app) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-sqlite) |
 | [PHP - Symfony (microservice)](/php-symfony-microservice) | Symfony, High Performance PHP Framework for Web Development | [👀🕶](https://php-symfony-microservice.vercel.app/) | [▲▲▲](https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php-symfony-microservice) |
+
+
+## 📦 PoC
+
+| Example     | Description | State | Note |
+|-------------|-------------|-------|--------|
+| [PHP - Wordpress](/php-wordpress) | Wordpress | Not working | Wordpress is big and complex |
 
 ## 📝 License
 
