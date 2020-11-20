@@ -4,7 +4,8 @@
       "runtime": "vercel-php@0.3.1"
     }
   },
-  "routes": [
-    { "src": "/(.*)", "dest": "/api/$1" }
+  "rewrites": [
+    { "source": "/favicon.ico", "destination": "https://juicy.vercel.app/favicon.ico" },
+    { "source": "/(.*)", "destination": "/api/index.php" }
   ]
 }
