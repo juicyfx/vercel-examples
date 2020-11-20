@@ -1,9 +1,10 @@
 {
   "require": {
-    "php": "^7.3",
-    "slim/slim": "^3.1",
-    "slim/php-view": "^2.0",
-    "monolog/monolog": "^1.17",
-    "robmorgan/phinx": "^0.5.1"
+    "php": "^7.4",
+    "slim/slim": "^4.6",
+    "slim/psr7": "^1.2"
+  },
+  "scripts": {
+    "dev": "php -S localhost:8080 -t api api/index.php"
   }
 }
