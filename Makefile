@@ -1,6 +1,6 @@
 .PHONY: deploy
 .PHONY: php php-composer
-.PHONY: php-laravel php-lumen php-nette-tracy php-phalcon php-satis php-slim php-symfony-microservice
+.PHONY: php-laminas php-laravel php-lumen php-nette-tracy php-phalcon php-satis php-slim php-symfony-micro1 php-symfony-micro2
 
 deploy:
 	cd ${PROJECT} && vc -c -n ${PROJECT} -S xorg ${NOW}
@@ -9,6 +9,7 @@ deploy-all:
 	$(MAKE) cache
 	$(MAKE) php
 	$(MAKE) php-composer
+	$(MAKE) php-laminas
 	$(MAKE) php-laravel
 	$(MAKE) php-lumen
 	$(MAKE) php-nette-tracy
@@ -16,7 +17,8 @@ deploy-all:
 	$(MAKE) php-satis
 	$(MAKE) php-slim
 	$(MAKE) php-sqlite
-	$(MAKE) php-symfony-microservice
+	$(MAKE) php-symfony-micro1
+	$(MAKE) php-symfony-micro2
 
 ##################
 # Basic examples #
@@ -31,6 +33,9 @@ php-composer:
 ##################
 # Basic examples #
 ##################
+
+php-laminas:
+	PROJECT=php-laminas $(MAKE) deploy
 
 php-laravel:
 	PROJECT=php-laravel $(MAKE) deploy
@@ -53,5 +58,8 @@ php-slim:
 php-sqlite:
 	PROJECT=php-sqlite $(MAKE) deploy
 
-php-symfony-microservice:
-	PROJECT=php-symfony-microservice $(MAKE) deploy
+php-symfony-micro1:
+	PROJECT=php-symfony-micro1 $(MAKE) deploy
+
+php-symfony-micro2:
+	PROJECT=php-symfony-micro2 $(MAKE) deploy
