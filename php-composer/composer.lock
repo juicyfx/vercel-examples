@@ -8,22 +8,22 @@
     "packages": [
         {
             "name": "tracy/tracy",
-            "version": "v2.8.6",
+            "version": "v2.8.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tracy.git",
-                "reference": "f3d2d6a1230a0a1a7b116c071ae4937e5e30101a"
+                "reference": "1e4ef64b01b6e6b6ec24cf5ea3bb3aa53aa80e40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tracy/zipball/f3d2d6a1230a0a1a7b116c071ae4937e5e30101a",
-                "reference": "f3d2d6a1230a0a1a7b116c071ae4937e5e30101a",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/1e4ef64b01b6e6b6ec24cf5ea3bb3aa53aa80e40",
+                "reference": "1e4ef64b01b6e6b6ec24cf5ea3bb3aa53aa80e40",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-session": "*",
-                "php": ">=7.2 <8.1"
+                "php": ">=7.2 <8.2"
             },
             "conflict": {
                 "nette/di": "<3.0"
@@ -74,7 +74,7 @@
                 "nette",
                 "profiler"
             ],
-            "time": "2021-08-16T21:50:26+00:00"
+            "time": "2021-08-24T12:19:33+00:00"
         }
     ],
     "packages-dev": [],
