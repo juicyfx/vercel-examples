@@ -1,0 +1,9 @@
+name: Vanilla
+description: A plain starter template that implements account management, a blog and community forum.
+author: OctoberCMS
+homepage: 'http://octobercms.com'
+code: Vanilla
+require:
+    - RainLab.User
+    - RainLab.Blog
+    - RainLab.Forum

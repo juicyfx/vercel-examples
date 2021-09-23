@@ -1,0 +1,33 @@
+{{ form_open({ request: 'onCreate' }) }}
+
+    <div class="form-group">
+        <label for="topicSubject" class="control-label">Subject</label>
+        <input
+            id="topicSubject"
+            name="subject"
+            type="text"
+            class="form-control"
+            value="{{ post('subject') }}" />
+    </div>
+
+    <div class="form-group">
+        <label for="topicContent" class="control-label">Content</label>
+        <textarea
+            id="topicContent"
+            name="content"
+            rows="8"
+            type="text"
+            class="form-control">{{ post('content') }}</textarea>
+        <span class="help-block">You can use <a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown</a> syntax.</span>
+    </div>
+
+    <div class="form-group post-buttons">
+        <button type="submit" class="btn btn-primary btn-lg">Post this topic</button>
+        {% if returnUrl %}
+            <a class="btn btn-link btn-lg" href="{{ returnUrl }}">Cancel</a>
+        {% endif %}
+    </div>
+
+    <input type="hidden" name="channel" value="{{ channel.id }}" />
+
+{{ form_close() }}

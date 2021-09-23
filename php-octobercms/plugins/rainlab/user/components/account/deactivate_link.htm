@@ -1,0 +1,28 @@
+<a
+    href="javascript:;"
+    onclick="$('#accountDeactivateForm').toggle()">
+    Deactivate account
+</a>
+
+<div id="accountDeactivateForm" style="display: none">
+    {{ form_ajax('onDeactivate') }}
+        <hr />
+        <h3>Deactivate your account?</h3>
+        <p>
+            Your account will be disabled and your details removed from the site.
+            You can reactivate your account any time by signing back in.
+        </p>
+        <div class="form-group">
+            <label for="accountDeletePassword">To continue, please enter your password:</label>
+            <input name="password" type="password" class="form-control" id="accountDeletePassword" />
+        </div>
+        <button type="submit" class="btn btn-danger">
+            Confirm Deactivate Account
+        </button>
+        <a
+            href="javascript:;"
+            onclick="$('#accountDeactivateForm').toggle()">
+            I changed my mind
+        </a>
+    {{ form_close() }}
+</div>

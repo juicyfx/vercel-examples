@@ -1,0 +1,48 @@
+1.0.1:
+    - First version of Forum
+    - create_channels_table.php
+    - create_posts_table.php
+    - create_topics_table.php
+    - create_members_table.php
+    - seed_all_tables.php
+1.0.2:
+    - Add unread flags to topics
+    - create_topic_watches_table.php
+1.0.3:
+    - Users can now be made moderators or be banned
+    - members_add_mod_and_ban.php
+1.0.4:
+    - Channels can now be hidden or moderated
+    - channels_add_hidden_and_moderated.php
+1.0.5:
+    - Introduced topic and channel embedding
+    - add_embed_code.php
+1.0.6:
+    - Add unread flags to channels
+    - create_channel_watches_table.php
+1.0.7:
+    - Forum members can now follow topics
+    - create_topic_followers_table.php
+1.0.8: Added Channel name to the Topics component view
+1.0.9: Updated the Settings page
+1.0.10: Users can now report spammers who can be banned by moderators.
+1.0.11: Users can now quote other posts.
+1.0.12: Improve support for CDN asset hosting.
+1.0.13: Fixes a bug where channels cannot be selected in the Embed component inspector.
+1.0.14: Improve the pagination code used in the component default markup.
+1.0.15: When a User is deleted, their Member profile and posts is also deleted.
+1.0.16: Posting topics is now throttled allowing 3 new topics every 15 minutes.
+1.0.17: Update channel reorder page to new system reordering feature.
+1.0.18: Minor fix to embed topic component.
+1.0.19:
+    - Database maintenance. Updated all timestamp columns to be nullable.
+    - update_timestamp_nullable.php
+1.1.0:
+    - Major performance enhancements
+    - drop_watches_tables.php
+1.1.1: Fixes bug throwing error when a forum topic has no posts.
+1.1.2: Add button for administrators to purge all posts by a member.
+1.2.0:
+    - Added spam guarding features.
+    - members_add_spam_guard.php
+1.2.1: Made plugin compatible with PHP 7.3. Improved translations.

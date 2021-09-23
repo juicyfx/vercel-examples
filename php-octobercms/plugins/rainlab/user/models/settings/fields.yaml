@@ -1,0 +1,69 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        # Throttle Sign In
+        use_throttle:
+            span: left
+            label: rainlab.user::lang.settings.use_throttle
+            comment: rainlab.user::lang.settings.use_throttle_comment
+            type: switch
+            tab: rainlab.user::lang.settings.signin_tab
+
+        # Prevent concurrent sessions
+        block_persistence:
+            span: right
+            label: rainlab.user::lang.settings.block_persistence
+            comment: rainlab.user::lang.settings.block_persistence_comment
+            type: switch
+            tab: rainlab.user::lang.settings.signin_tab
+
+        # Login Attribute
+        login_attribute:
+            span: left
+            label: rainlab.user::lang.settings.login_attribute
+            commentAbove: rainlab.user::lang.settings.login_attribute_comment
+            type: radio
+            tab: rainlab.user::lang.settings.signin_tab
+
+        # Remeber Login Mode
+        remember_login:
+            span: right
+            label: rainlab.user::lang.settings.remember_login
+            commentAbove: rainlab.user::lang.settings.remember_login_comment
+            type: radio
+            tab: rainlab.user::lang.settings.signin_tab
+
+        # Require Activation
+        allow_registration:
+            span: left
+            label: rainlab.user::lang.settings.allow_registration
+            comment: rainlab.user::lang.settings.allow_registration_comment
+            type: switch
+            tab: rainlab.user::lang.settings.registration_tab
+
+        # Enable registration throttling
+        use_register_throttle:
+            span: right
+            label: rainlab.user::lang.settings.use_register_throttle
+            comment: rainlab.user::lang.settings.use_register_throttle_comment
+            type: switch
+            tab: rainlab.user::lang.settings.registration_tab
+
+        # Require Activation
+        require_activation:
+            span: left
+            label: rainlab.user::lang.settings.require_activation
+            comment: rainlab.user::lang.settings.require_activation_comment
+            type: switch
+            tab: rainlab.user::lang.settings.activation_tab
+
+        # Activation Mode
+        activate_mode:
+            span: left
+            commentAbove: rainlab.user::lang.settings.activate_mode_comment
+            label: rainlab.user::lang.settings.activate_mode
+            type: radio
+            tab: rainlab.user::lang.settings.activation_tab

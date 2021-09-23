@@ -1,0 +1,36 @@
+<?php if ($this->previewMode): ?>
+    <div class="form-control"><?= e($value) ?></div>
+<?php else: ?>
+    <div
+        id="<?= $this->getId() ?>"
+        class="field-colorpicker"
+        data-control="colorpicker"
+        <?php if ($showAlpha): ?>data-show-alpha="<?= $showAlpha ?>"<?php endif ?>
+        <?php if ($allowEmpty): ?>data-allow-empty="<?= $allowEmpty ?>"<?php endif ?>
+        data-data-locker="#<?= $this->getId('input') ?>">
+
+        <ul>
+            <?php foreach ($availableColors as $index => $color): ?>
+                <li
+                    class="<?= $color == $value ? 'active' : null ?>"
+                    data-hex-color="<?= $color ?>">
+                    <span style="background: <?= $color ?>"><?= $color ?></span>
+                </li>
+            <?php endforeach ?>
+
+            <li
+                class="custom-color <?= $isCustomColor == $value ? 'active' : null ?>"
+                data-hex-color="<?= $isCustomColor ? e($value) : '#ffffff' ?>"
+                data-custom-color>
+                <span style="background: <?= $isCustomColor ? e($value) : '#ffffff' ?>"></span>
+            </li>
+        </ul>
+
+        <input
+            type="hidden"
+            id="<?= $this->getId('input') ?>"
+            name="<?= $name ?>"
+            value="<?= e($value) ?>" />
+    </div>
+
+<?php endif ?>

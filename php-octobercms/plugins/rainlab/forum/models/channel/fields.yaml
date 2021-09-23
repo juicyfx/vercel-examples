@@ -1,0 +1,42 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    parent:
+        label: rainlab.forum::lang.data.parent
+        type: relation
+        nameFrom: title
+        emptyOption: rainlab.forum::lang.data.noparent
+
+    title:
+        label: rainlab.forum::lang.data.title
+        span: left
+
+    slug:
+        label: rainlab.forum::lang.data.slug
+        span: right
+        preset: title
+
+    description:
+        label: rainlab.forum::lang.data.desc
+        type: textarea
+        size: tiny
+
+    is_moderated:
+        label: rainlab.forum::lang.data.moderated
+        comment: rainlab.forum::lang.data.is_mod
+        type: checkbox
+        span: auto
+
+    is_hidden:
+        label: rainlab.forum::lang.data.hidden
+        comment: rainlab.forum::lang.data.is_hidden
+        type: checkbox
+        span: auto
+
+    is_guarded:
+        label: rainlab.forum::lang.data.guarded
+        comment: rainlab.forum::lang.data.is_guarded
+        type: checkbox
+        span: full

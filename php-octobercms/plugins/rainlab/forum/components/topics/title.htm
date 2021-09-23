@@ -1,0 +1,11 @@
+<div class="row">
+
+    <div class="col-md-12">
+        {{ form_open({ method: 'get' })}}
+            <div class="search-box">
+                <input type="text" name="search" class="form-control" placeholder="Search topics" value="{{ input('search')|e }}">
+            </div>
+        {{ form_close() }}
+    </div>
+
+</div>

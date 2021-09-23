@@ -1,0 +1,111 @@
+<a href="{{ post.member.url }}" class="avatar">
+    <img src="{{ post.member.user.avatarThumb(50) }}" alt="{{ post.member.username }}" />
+</a>
+<div class="content">
+    <a href="{{ post.member.url }}" class="author">{{ post.member.username }}</a>
+    <div class="metadata">
+        <div class="date">
+            <a href="#post-{{ post.id }}">
+                {% partial __SELF__ ~ "::timestamp" date=post.created_at %}
+            </a>
+        </div>
+        {% if post.member.is_banned %}
+            <div class="status text-danger">
+                <i class="icon-exclamation"></i> Banned
+            </div>
+        {% elseif topic.channel.is_guarded and not post.member.is_approved %}
+            <div class="status text-warning">
+                <i class="icon-lock"></i> Unapproved
+            </div>
+        {% elseif post.member.is_moderator %}
+            <div class="status">
+                <i class="icon-star"></i> Moderator
+            </div>
+        {% endif %}
+    </div>
+
+    {% if mode == 'edit' %}
+
+        {{ form_open() }}
+            <!-- Passable fields -->
+            <input type="hidden" name="mode" value="save" />
+            <input type="hidden" name="post" value="{{ post.id }}" />
+
+            {% if topic.first_post.id == post.id %}
+                <input type="text" name="subject" class="form-control" value="{{ topic.subject }}" />
+            {% endif %}
+
+            <div class="text">
+                <textarea
+                    rows="5"
+                    name="content"
+                    class="form-control"
+                    >{{ post.content }}</textarea>
+            </div>
+            <div class="actions">
+                <a
+                    href="javascript:;"
+                    data-request="{{ __SELF__ }}::onUpdate"
+                    data-request-data="post: {{ post.id }}"
+                    data-request-update="'{{ __SELF__ }}::post': '#post-{{ post.id }}'"
+                    class="save">
+                    Save
+                </a>
+
+                <a
+                    href="javascript:;"
+                    data-request="{{ __SELF__ }}::onUpdate"
+                    data-request-data="post: {{ post.id }}, mode: 'delete'"
+                    data-request-update="'{{ __SELF__ }}::post': '#post-{{ post.id }}'"
+                    data-request-confirm="Are you sure?"
+                    class="delete">
+                    Delete
+                </a>
+
+                <a href="javascript:;"
+                    data-request="{{ __SELF__ }}::onUpdate"
+                    data-request-data="post: {{ post.id }}, mode: 'view'"
+                    data-request-update="'{{ __SELF__ }}::post': '#post-{{ post.id }}'"
+                    class="cancel">
+                    Cancel
+                </a>
+            </div>
+        {{ form_close() }}
+
+    {% elseif mode == 'delete' %}
+        <div class="text">
+            <p><em>Post has been deleted</em></p>
+        </div>
+    {% else %}
+        <div class="text">
+            {{ post.content_html|raw }}
+
+            {% if post.created_at != post.updated_at %}
+                <p><small class="text text-muted">
+                    Last updated {% partial __SELF__ ~ "::timestamp" date=post.updated_at %}
+                </small></p>
+            {% endif %}
+        </div>
+        <div class="actions">
+            {% if topic.canPost %}
+                <a href="javascript:;"
+                    class="quote"
+                    data-request-data="post: {{ post.id }}"
+                    data-quote-button>
+                    Quote
+                </a>
+            {% endif %}
+            {% if topic.canPost and post.canEdit and mode != 'edit' and mode != 'delete' %}
+                <a href="javascript:;"
+                    class="edit"
+                    data-request="onUpdate"
+                    data-request-data="post: {{ post.id }}"
+                    data-request-update="'{{ __SELF__ ~ '::post' }}': '#post-{{ post.id }}'">
+                    Edit
+                </a>
+            {% endif %}
+        </div>
+    {% endif %}
+
+</div>
+<div class="post-divider"></div>

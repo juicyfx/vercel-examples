@@ -1,0 +1,25 @@
+<div class="reply-form" id="postForm">
+
+    {{ form_open({ request: 'onPost' }) }}
+
+        <input type="hidden" name="topic" value="{{ topic.id }}" />
+
+        <div class="member-area">
+            <img src="{{ member.user.avatarThumb(50) }}" class="member-avatar" alt="{{ member.username }}" />
+        </div>
+
+        <div class="post-area">
+            <textarea
+                id="topicContent"
+                name="content"
+                rows="6"
+                class="form-control">{{ form_value('content') }}</textarea>
+            <span class="help-block">You can use <a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown</a> syntax.</span>
+            <div class="post-buttons">
+                <button type="submit" class="btn btn-primary btn-lg">Post a Reply</button>
+            </div>
+        </div>
+
+    {{ form_close() }}
+
+</div>

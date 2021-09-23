@@ -1,0 +1,31 @@
+{% flash %}
+    <div class="alert alert-{{ type == 'error' ? 'danger' : type }}">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    </div>
+{% endflash %}
+
+{% if __SELF__.member %}
+
+    <div class="row">
+        <div class="col-md-3 col-md-push-9">
+
+            <div id="memberControlPanel">
+                {% partial "@controlpanel" %}
+            </div>
+
+        </div>
+        <div class="col-md-9 col-md-pull-3">
+            {% if mode == 'edit' %}
+                {% partial __SELF__ ~ '::update' %}
+            {% else %}
+                {% partial __SELF__ ~ '::preview' %}
+            {% endif %}
+        </div>
+    </div>
+
+{% else %}
+
+    <p>Forum member not found</p>
+
+{% endif %}

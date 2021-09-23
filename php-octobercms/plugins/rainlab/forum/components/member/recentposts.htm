@@ -1,0 +1,30 @@
+{% set posts = __SELF__.getRecentPosts() %}
+
+<table class="forum-table">
+    <tr>
+        <th>Post</th>
+        <th class="activity-column">When</th>
+    </tr>
+
+    {% for post in posts %}
+        {% set topic = post.topic %}
+        <tr class="forum-topic">
+            <td>
+                {{ html_limit(post.content_html, 100)|raw }}
+            </td>
+            <td class="activity-column">
+                <p>
+                    Posted in
+                    <a href="{{ topic.url }}?page=last#post-{{ post.id }}">{{ topic.subject }}</a>
+                    {% partial __SELF__ ~ "::timestamp" date=post.updated_at %}
+                </p>
+            </td>
+        </tr>
+    {% endfor %}
+
+    {% if not posts|length %}
+        <tr>
+            <td colspan="100">This member has not participated in the forum.</td>
+        </tr>
+    {% endif %}
+</table>

@@ -1,0 +1,56 @@
+<div class="forum-posts">
+    <table class="forum-table">
+        <tr>
+            <th>Post</th>
+            <th class="activity-column">When</th>
+        </tr>
+
+        {% for post in posts %}
+            {% set topic = post.topic %}
+            <tr class="forum-topic">
+                <td>
+                    <div class="forum-post">
+                        {% if otherMember.is_moderator %}
+                            <div class="actions">
+                                <a href="javascript:;"
+                                    class="approve"
+                                    data-request="onFlagSpam"
+                                    data-request-data="post: {{ post.id }}"
+                                    data-request-update="'@posts': '#forumPosts'"
+                                    data-request-confirm="Are you sure? This will delete all posts by this member.">
+                                    Flag as Spam
+                                </a>
+                                <a href="javascript:;"
+                                    class="approve pull-right"
+                                    data-request="onApprove"
+                                    data-request-data="post: {{ post.id }}"
+                                    data-request-update="'@posts': '#forumPosts'">
+                                    Approve Member
+                                </a>
+                            </div>
+                            <br />
+                        {% endif %}
+                        <div class="text">
+                            {{ post.content_html|raw }}
+                        </div>
+                    </div>
+                </td>
+                <td class="activity-column">
+                    <p>
+                        <img src="{{ post.member.user.avatarThumb(24) }}" class="member-avatar" />
+                        <a href="{{ post.member.url }}">{{ post.member.username }}</a>
+                        posted in
+                        <a href="{{ topic.url }}?page=last#post-{{ post.id }}">{{ topic.subject }}</a>
+                        {% partial __SELF__ ~ "::timestamp" date=post.updated_at %}
+                    </p>
+                </td>
+            </tr>
+        {% endfor %}
+
+        {% if not posts|length %}
+            <tr>
+                <td colspan="100">There are no posts to display.</td>
+            </tr>
+        {% endif %}
+    </table>
+</div>

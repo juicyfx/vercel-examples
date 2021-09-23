@@ -1,0 +1,75 @@
+<div class="rainlab-forum">
+
+    <table class="forum-table">
+        {% for channel in channels %}
+
+            <tr class="root-channel">
+                <th colspan="2">
+                    {{ channel.title }}
+                </th>
+                <th class="counter-column">Topics</th>
+                <th class="counter-column">Posts</th>
+                <th class="activity-column">Recent topic</th>
+            </tr>
+
+            {% if channel.relations.children %}
+
+                {% for channel in channel.children %}
+
+                    <tr class="forum-channel">
+                        <td class="indicator-column">
+                            <div class="topic-indicator {{ channel.hasNew ? 'has-new' }}"></div>
+                        </td>
+                        <td>
+                            <h5>
+                                <a href="{{ channel.url }}">
+                                    {{ channel.title }}
+                                </a>
+                            </h5>
+                            <p>{{ channel.description }}</p>
+
+                            {% if channel.children|length %}
+                                <div class="forum-subchannel">
+                                    <ul>
+                                        <li><span>Subforum</span></li>
+                                        {% for channel in channel.children %}
+                                            <li>
+                                                <a href="{{ channel.url }}" title="{{ channel.description }}">
+                                                    {{ channel.title }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </td>
+                        <td class="counter-column">
+                            <p>{{ channel.count_topics }}</p>
+                        </td>
+                        <td class="counter-column">
+                            <p>{{ channel.count_posts }}</p>
+                        </td>
+                        <td class="activity-column">
+                            {% if channel.first_topic %}
+                                <p>
+                                    <a href="{{ channel.first_topic.url }}?page=last#post-{{ channel.first_topic.last_post_id }}">
+                                        {{ channel.first_topic.subject }}
+                                    </a>
+                                    <small>
+                                        {% partial __SELF__ ~ "::timestamp" date=channel.first_topic.last_post_at %}
+                                    </small>
+                                </p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            {% else %}
+                <tr>
+                    <td colspan="100"><p>There are no channels to show.</p></td>
+                </tr>
+            {% endif %}
+
+        {% endfor %}
+    </table>
+</div>
