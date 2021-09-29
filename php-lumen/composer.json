@@ -1,7 +1,7 @@
 {
   "require": {
-    "php": "^7.2",
-    "laravel/lumen-framework": "^6.0"
+    "php": "^7.3|^8.0",
+    "laravel/lumen-framework": "^8.2.7"
   },
   "require-dev": {
     "fzaninotto/faker": "^1.4",
