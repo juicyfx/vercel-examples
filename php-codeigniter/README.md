@@ -6,7 +6,7 @@
 ### Steps 
 
 1. move the application, system folders along with the index.php into the api directory
-2. Open api/application/config/config.php and replace
+2. Open api/index.php and replace
 
 	1.  First change System Folder:
 
