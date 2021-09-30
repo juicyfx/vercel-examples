@@ -8,6 +8,7 @@
     "packages": [
         {
             "name": "tracy/tracy",
+<<<<<<< HEAD
             "version": "v2.6.4",
             "source": {
                 "type": "git",
@@ -18,11 +19,24 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/nette/tracy/zipball/cad2ec2c40cee828ce5538a4bc5bbde7045a7c1b",
                 "reference": "cad2ec2c40cee828ce5538a4bc5bbde7045a7c1b",
+=======
+            "version": "v2.8.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/tracy.git",
+                "reference": "1e4ef64b01b6e6b6ec24cf5ea3bb3aa53aa80e40"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/1e4ef64b01b6e6b6ec24cf5ea3bb3aa53aa80e40",
+                "reference": "1e4ef64b01b6e6b6ec24cf5ea3bb3aa53aa80e40",
+>>>>>>> master
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-session": "*",
+<<<<<<< HEAD
                 "php": ">=7.1"
             },
             "require-dev": {
@@ -38,6 +52,26 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.6-dev"
+=======
+                "php": ">=7.2 <8.2"
+            },
+            "conflict": {
+                "nette/di": "<3.0"
+            },
+            "require-dev": {
+                "latte/latte": "^2.5",
+                "nette/di": "^3.0",
+                "nette/mail": "^3.0",
+                "nette/tester": "^2.2",
+                "nette/utils": "^3.0",
+                "phpstan/phpstan": "^0.12",
+                "psr/log": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+>>>>>>> master
                 }
             },
             "autoload": {
@@ -45,7 +79,11 @@
                     "src"
                 ],
                 "files": [
+<<<<<<< HEAD
                     "src/Tracy/shortcuts.php"
+=======
+                    "src/Tracy/functions.php"
+>>>>>>> master
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -62,7 +100,11 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
+<<<<<<< HEAD
             "description": "😎 Tracy: the addictive tool to ease debugging PHP code for cool developers. Friendly design, logging, profiler, advanced features like debugging AJAX calls or CLI support. You will love it.",
+=======
+            "description": "😎  Tracy: the addictive tool to ease debugging PHP code for cool developers. Friendly design, logging, profiler, advanced features like debugging AJAX calls or CLI support. You will love it.",
+>>>>>>> master
             "homepage": "https://tracy.nette.org",
             "keywords": [
                 "Xdebug",
@@ -71,7 +113,11 @@
                 "nette",
                 "profiler"
             ],
+<<<<<<< HEAD
             "time": "2019-07-16T14:23:55+00:00"
+=======
+            "time": "2021-08-24T12:19:33+00:00"
+>>>>>>> master
         }
     ],
     "packages-dev": [],
@@ -83,5 +129,10 @@
     "platform": {
         "php": "^7.3"
     },
+<<<<<<< HEAD
     "platform-dev": []
+=======
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+>>>>>>> master
 }

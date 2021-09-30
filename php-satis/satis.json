@@ -1,0 +1,11 @@
+{
+  "name": "vercel/satis",
+  "homepage": "https://satis.vercel.app/",
+  "repositories": [
+      { "type": "vcs", "url": "https://github.com/nette/tracy" },
+      { "type": "vcs", "url": "https://github.com/nette/latte" },
+      { "type": "vcs", "url": "https://github.com/nette/neon" }
+  ],
+  "require-all": true,
+  "require-dependencies": true
+}

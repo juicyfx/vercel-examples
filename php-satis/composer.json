@@ -1,0 +1,8 @@
+{
+  "require": {
+    "composer/satis": "^1.0"
+  },
+  "scripts": {
+    "vercel": "satis build satis.json public -vvv"
+  }
+}

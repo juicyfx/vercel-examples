@@ -1,0 +1,12 @@
+{
+  "name": "vercel-example-cache",
+  "version": "0.0.0",
+  "scripts": {
+    "compile": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@vercel/node": "^1.8.4",
+    "typescript": "^4.0.5"
+  }
+}

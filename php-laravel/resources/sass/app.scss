@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply min-h-screen w-full overflow-x-hidden;
+}
+
+@screen dark-mode {
+    body {
+        @apply bg-gray-900 text-gray-300;
+    }
+}
+
+/* Layout Transitions */
+.layout-transition-leave-active,
+.layout-transition-enter-active {
+    transition: 0.3s;
+}
+.layout-transition-enter,
+.layout-transition-leave-to {
+    filter: blur(25px);
+    opacity: 0;
+}
+
+/* Route Transitions */
+.route-transition-enter-active,
+.route-transition-leave-active {
+    transition: 0.15s;
+}
+.route-transition-enter,
+.route-transition-leave-to {
+    opacity: 0;
+}

@@ -1,0 +1,14 @@
+{
+  "builds": [
+    { "src": "index.php", "use": "vercel-php@0.3.1" }
+  ],
+  "routes": [
+    { "src": "/(.*)",  "dest": "/index.php" }
+  ],
+  "build": {
+    "env": {
+      "NOW_PHP_DEBUG": "1",
+      "COMPOSER_AUTH": "@github-satis"
+    }
+  }
+}
