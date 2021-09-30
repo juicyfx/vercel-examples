@@ -1,0 +1,11 @@
+{
+  "builds": [
+    {
+      "src": "public/index.php",
+      "use": "now-php"
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "public/index.php" }
+  ]
+}

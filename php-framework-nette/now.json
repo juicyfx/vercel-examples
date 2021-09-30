@@ -1,0 +1,5 @@
+{
+  "builds": [
+    { "src": "*.php", "use": "now-php@canary" }
+  ]
+}
