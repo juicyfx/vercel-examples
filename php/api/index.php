@@ -1,6 +1,6 @@
 <?php
 //存有图片链接的文件名img.txt
-$filename = "img.txt";
+$filename = "https://mrl646.vercel.app/AliyunDrive/img.txt";
 if(!file_exists($filename)){
     die('文件不存在');
 }
