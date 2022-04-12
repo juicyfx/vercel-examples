@@ -1,10 +1,7 @@
 <?php
 //存有图片链接的文件名img.txt
-$filename = "https://mrl646.vercel.app/AliyunDrive/img.txt";
-if(!file_exists($filename)){
-    die('文件不存在');
-}
- 
+$filename = "https://mrl646.vercel.app/AliyunDrive/img.txthttps://cdn.jsdelivr.net/gh/MrL646/vercel-examples/php/api/img.txt";
+
 //从文本获取链接
 $pics = [];
 $fs = fopen($filename, "r");
