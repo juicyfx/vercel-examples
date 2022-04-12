@@ -1,5 +1,5 @@
 <?php
-//存有美图链接的文件名img.txt
+//存有图片链接的文件名img.txt
 $filename = "img.txt";
 if(!file_exists($filename)){
     die('文件不存在');
