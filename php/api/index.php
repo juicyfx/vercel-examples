@@ -1,6 +1,6 @@
 <?php
 //存有图片链接的文件名img.txt
-$filename = "https://mrl646.vercel.app/AliyunDrive/img.txthttps://cdn.jsdelivr.net/gh/MrL646/vercel-examples/php/api/img.txt";
+$filename = "https://cdn.jsdelivr.net/gh/MrL646/vercel-examples/php/api/img.txt";
 
 //从文本获取链接
 $pics = [];
