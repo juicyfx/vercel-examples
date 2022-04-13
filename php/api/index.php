@@ -1,31 +1,18 @@
-<?php
-//存有图片链接的文件名img.txt
-$filename = "https://cdn.jsdelivr.net/gh/MrL646/vercel-examples/php/api/img.txt";
-
-//从文本获取链接
-$pics = [];
-$fs = fopen($filename, "r");
-while(!feof($fs)){
-    $line=trim(fgets($fs));
-    if($line!=''){
-        array_push($pics, $line);
-    }
-}
- 
-//从数组随机获取链接
-$pic = $pics[array_rand($pics)];
- 
-//返回指定格式
-$type=$_GET['type'];
-switch($type){
- 
-//JSON返回
-case 'json':
-    header('Content-type:text/json');
-    die(json_encode(['pic'=>$pic]));
- 
-default:
-    die(header("Location: $pic"));
-}
- 
-?>
+// 1.读取randImg.txt中的内容，并以换行符分开
+$str = explode("\n", file_get_contents('https://cdn.jsdelivr.net/gh/MrL646/vercel-examples/php/api/img.txt'));
+// 2.得到的$str是一个String的数组，然后获取随机数index
+$rand_index = rand(0,count($str)-1);
+// 根据生成的随机数选取index为$rand_index的图片链接
+$url = $str[$rand_index];
+// 替换掉转义
+$url = str_re($url);
+// 3.重定向到目标url,返回302码,然后浏览器就会跳转到图片url的地址
+header("Location:".$url);
+// 替换掉一些换行、制表符等转义
+function str_re($str){
+    $str = str_replace(' ', "", $str);
+    $str = str_replace("\n", "", $str);
+    $str = str_replace("\t", "", $str);
+    $str = str_replace("\r", "", $str);
+    return $str;
+  }
