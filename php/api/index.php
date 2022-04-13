@@ -1,3 +1,4 @@
+<?php
 // 1.读取randImg.txt中的内容，并以换行符分开
 $str = explode("\n", file_get_contents('https://cdn.jsdelivr.net/gh/MrL646/vercel-examples/php/api/img.txt'));
 // 2.得到的$str是一个String的数组，然后获取随机数index
@@ -16,3 +17,4 @@ function str_re($str){
     $str = str_replace("\r", "", $str);
     return $str;
   }
+?>
