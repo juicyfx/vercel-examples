@@ -1,6 +1,6 @@
 <?php
 // 1.读取2.txt中的内容，并以换行符分开
-$str = explode("\n", file_get_contents('https://ramkoishi-plus.vercel.app/2.txt'));
+$str = explode("\n", file_get_contents('https://ramkoishi-plus.vercel.app/1.txt'));
 // 2.得到的$str是一个String的数组，然后获取随机数index
 $rand_index = rand(0,count($str)-1);
 // 根据生成的随机数选取index为$rand_index的图片链接
