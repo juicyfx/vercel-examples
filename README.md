@@ -39,12 +39,6 @@ Fastest way how to deploy example project is using following deploy button. It d
 | [PHP - Symfony Micro (vol1)](/php-symfony-micro1) | Symfony with MicroKernelTrait                     | [👀🕶](https://php-symfony-micro1.vercel.app/) | [▲▲▲](<https://vercel.com/new/clone?demo-description=Symfony%20with%20MicroKernelTrait&demo-title=Symfony%20Micro%20(vol1)&demo-url=https%3A%2F%2Fphp-symfony-micro1.vercel.app%2F&project-name=vercel-php-symfony-micro1&s=https%3A%2F%2Fgithub.com%2Fjuicyfx%2Fvercel-examples%2Ftree%2Fmaster%2Fphp-symfony-micro1&repository-name=vercel-php-symfony-micro1&from=templates&demo-image=https%3A%2F%2Fog-image.vercel.app%2F**Vercel**%2520%252B%2520**Symfony%20Micro%20(vol1)**.jpeg%3Ftheme%3Dlight%26md%3D1%26fontSize%3D100px%26images%3Dhttps%253A%252F%252Fassets.vercel.com%252Fimage%252Fupload%252Ffront%252Fassets%252Fdesign%252Fvercel-triangle-black.svg%26images%3Dhttps%253A%252F%252Fsimpleicons.vercel.app%252Fphp%252F595C96%26heights%3D200%26heights%3D350>) |
 | [PHP - Symfony Micro (vol2)](/php-symfony-micro2) | Symfony with MicroKernelTrait                     | [👀🕶](https://php-symfony-micro2.vercel.app/) | [▲▲▲](<https://vercel.com/new/clone?demo-description=Symfony%20with%20MicroKernelTrait&demo-title=Symfony%20Micro%20(vol2)&demo-url=https%3A%2F%2Fphp-symfony-micro2.vercel.app%2F&project-name=vercel-php-symfony-micro2&s=https%3A%2F%2Fgithub.com%2Fjuicyfx%2Fvercel-examples%2Ftree%2Fmaster%2Fphp-symfony-micro2&repository-name=vercel-php-symfony-micro2&from=templates&demo-image=https%3A%2F%2Fog-image.vercel.app%2F**Vercel**%2520%252B%2520**Symfony%20Micro%20(vol2)**.jpeg%3Ftheme%3Dlight%26md%3D1%26fontSize%3D100px%26images%3Dhttps%253A%252F%252Fassets.vercel.com%252Fimage%252Fupload%252Ffront%252Fassets%252Fdesign%252Fvercel-triangle-black.svg%26images%3Dhttps%253A%252F%252Fsimpleicons.vercel.app%252Fphp%252F595C96%26heights%3D200%26heights%3D350>) |
 
-## 📦 PoC
-
-| Example                           | Description | State       | Note                         |
-| --------------------------------- | ----------- | ----------- | ---------------------------- |
-| [PHP - Wordpress](/php-wordpress) | Wordpress   | Not working | Wordpress is big and complex |
-
 ## 📝 License
 
 Copyright © 2019 [f3l1x](https://github.com/f3l1x).
