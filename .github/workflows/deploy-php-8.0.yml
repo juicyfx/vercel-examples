@@ -1,9 +1,9 @@
-name: Deploy php
+name: Deploy php 8.0
 
 on:
   push:
     paths:
-      - 'php/**'
+      - 'php-8.0/**'
     branches:
       - "master"
 
@@ -17,5 +17,5 @@ jobs:
     uses: ./.github/workflows/vercel.yml
     secrets: inherit
     with:
-      projectId: "QmUCScRKnp9ciJXA5Rucs9Wx6p3i4YnWvbKUqtvZNX8PcH"
-      projectPath: "php"
+      projectId: "prj_WlfX8kyVFZxsKSI26LHBLLtzSNB1"
+      projectPath: "php-8.0"
