@@ -1,0 +1,21 @@
+name: Deploy php show
+
+on:
+  push:
+    paths:
+      - 'php-show/**'
+    branches:
+      - "master"
+
+concurrency:
+  group: php-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy
+    uses: ./.github/workflows/vercel.yml
+    secrets: inherit
+    with:
+      projectId: "prj_wD0FhGcrHvcmKPmZqcjXtHPIfLE4"
+      projectPath: "php-show"

@@ -1,0 +1,18 @@
+{
+  "functions": {
+    "api/**/*.php": {
+      "runtime": "vercel-php@0.6.0"
+    }
+  },
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/api/$1" },
+    { "src": "/ini/(.*)", "dest": "/api/ini/$1" },
+    { "src": "/ext/(.*)", "dest": "/api/ext/$1" },
+    { "src": "/(.*)", "dest": "/api/$1" }
+  ],
+  "build": {
+    "env": {
+      "NOW_PHP_DEBUG": "1"
+    }
+  }
+}
