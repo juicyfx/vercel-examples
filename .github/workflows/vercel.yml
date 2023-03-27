@@ -1,0 +1,79 @@
+name: Deploy Vercel
+
+on:
+  workflow_call:
+    inputs:
+      projectPath:
+        required: true
+        type: string
+        default: "tests"
+
+      projectId:
+        required: true
+        type: string
+
+      orgId:
+        required: false
+        type: string
+        default: "team_IkoklT80okK0VAeKnM87wuvk"
+
+jobs:
+  deploy:
+    name: "Deploy ${{ inputs.projectPath }}"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Cache Node.js
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install Vercel
+        run: |
+          npm i -g vercel
+
+      - name: Setup ENV
+        id: setup
+        run: |
+          echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
+
+          if [[ "${GITHUB_REF}" == "refs/heads/master" ]]; then
+            echo "args=--prod" >> $GITHUB_OUTPUT
+          fi
+      - name: Debug
+        run: |
+          echo "::debug::Branch ${{steps.setup.outputs.branch}}"
+          echo "::debug::Args ${{steps.setup.outputs.args}}"
+
+      - name: Deploy
+        id: vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROJECT_ID: ${{ inputs.projectId }}
+          VERCEL_ORG_ID: ${{ inputs.orgId }}
+        run: |
+          vercel \
+            -t ${{ secrets.VERCEL_TOKEN }} \
+            -m githubCommitSha=${GITHUB_SHA} \
+            -m githubCommitAuthorName=${{ github.event.sender.login }} \
+            -m githubCommitAuthorLogin=f3l1x \
+            -m githubDeployment=1 \
+            -m githubOrg=${{ github.event.repository.owner.name }} \
+            -m githubRepo=${{ github.event.repository.name }} \
+            -m githubRepoId=${{ github.event.repository.id }} \
+            -m githubCommitOrg=${{ github.event.repository.owner.name }} \
+            -m githubCommitRepo=${{ github.event.repository.name }} \
+            -m githubCommitRepoId=${{ github.event.repository.id }} \
+            -m githubCommitMessage="${{ github.event.head_commit.message }}" \
+            -m githubCommitRef=${{steps.setup.outputs.branch}} \
+            --cwd ${{ inputs.projectPath }} \
+            ${{steps.setup.outputs.args}}

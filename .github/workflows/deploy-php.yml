@@ -1,0 +1,21 @@
+name: Deploy avatarless
+
+on:
+  push:
+    paths:
+      - 'php/**'
+    branches:
+      - "master"
+
+concurrency:
+  group: php-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy php
+    uses: ./.github/workflows/vercel.yml
+    secrets: inherit
+    with:
+      projectId: "QmUCScRKnp9ciJXA5Rucs9Wx6p3i4YnWvbKUqtvZNX8PcH"
+      projectPath: "php"
