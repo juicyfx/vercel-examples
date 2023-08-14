@@ -1,17 +1,12 @@
-module.exports = {
-  purge: [
-    './resources/js/**/*.vue'
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+      "routes/web.php",
+      "resources/**/*.blade.php"
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        'sans': ['Inter', 'Helvetica', 'Arial', 'sans-serif']
-      },
-      screens: {
-        'dark-mode': { raw: '(prefers-color-scheme: dark)' }
-      }
-    },
+    extend: {},
   },
-  variants: {},
   plugins: [],
 }
+

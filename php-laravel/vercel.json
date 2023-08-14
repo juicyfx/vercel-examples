@@ -1,13 +1,19 @@
 {
     "version": 2,
-    "builds": [
-        { "src": "/api/index.php", "use": "vercel-php@0.3.1" },
-        { "src": "/public/**", "use": "@vercel/static" }
-    ],
+    "framework": null,
+    "functions": {
+        "api/index.php": {
+            "runtime": "vercel-php@0.6.0"
+        }
+    },
     "routes": [
         {
-            "src": "/(css|js)/(.*)",
-            "dest": "public/$1/$2"
+            "src": "/(favicon\\.ico|robots\\.txt)",
+            "dest": "/public/$1"
+        },
+        {
+            "src": "/build/(.*)",
+            "dest": "/public/build/$1"
         },
         {
             "src": "/(.*)",
@@ -18,7 +24,7 @@
         "APP_NAME": "Vercel Laravel",
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "https://php-laravel.vercel.app",
+        "APP_URL": "https://laravel-vercel.vercel.app",
         "VERCEL_DEMO_MODE": "true",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
