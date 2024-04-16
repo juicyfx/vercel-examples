@@ -1,0 +1,21 @@
+name: Deploy php exec
+
+on:
+  push:
+    paths:
+      - 'php-exec/**'
+    branches:
+      - "master"
+
+concurrency:
+  group: php-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy
+    uses: ./.github/workflows/vercel.yml
+    secrets: inherit
+    with:
+      projectId: "prj_1twKaUwaHQHV0M3YfoLY626vwIaQ"
+      projectPath: "php-exec"

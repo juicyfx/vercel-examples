@@ -1,0 +1,21 @@
+name: Deploy php 8.3
+
+on:
+  push:
+    paths:
+      - 'php-8.3/**'
+    branches:
+      - "master"
+
+concurrency:
+  group: php-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy
+    uses: ./.github/workflows/vercel.yml
+    secrets: inherit
+    with:
+      projectId: "prj_8Sr1ZZvQgIfYaChCekr4yv3byJnV"
+      projectPath: "php-8.3"
